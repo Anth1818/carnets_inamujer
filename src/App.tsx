@@ -1,13 +1,16 @@
 import "./App.css"
-import { CarnetInamujer } from "./components/CarnetInamujer"
-import { Header } from "./components/Header"
+import { Route, Routes } from "react-router-dom";
+import { PageCarnet } from "./pages/PageCarnet";
+import { PageVerification } from "./pages/PageVerification";
 function App() {
 
   return (
     <>
-      <Header />
-      <h1 className="text-3xl font-bold text-center">Generador de carnet</h1>
-      <CarnetInamujer />
+      <Routes>
+        <Route path="/" element={<PageCarnet />} />
+        <Route path="/carnet" element={<PageCarnet />} />
+        <Route path="/carnet/verification/:id" element={<PageVerification />} />
+      </Routes>
     </>
   )
 }
