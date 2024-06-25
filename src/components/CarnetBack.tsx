@@ -8,11 +8,11 @@ interface ICarnetFrontProps {
 
 export function CarnetBack({refBack}: ICarnetFrontProps) {
   return (
-    <div id="reverso" className="h-[650px] w-[500px] flex flex-col justify-start items-center mt-2 ">
-      <h2 className="text-left font-bold ">Reverso</h2>
-      <div id="carnet-back" ref={refBack} className="min-h-[620px] w-[400px] border-2">
+    <div  id="reverso" className="h-[650px] w-[500px] flex flex-col justify-start items-center mt-2 ">
+      <h2 className="text-left font-bold "  >Reverso</h2>
+      <div  ref={refBack} id="carnet-back"  className="min-h-[620px] w-[400px] border-2 box-border">
         <header className="h-[110px] w-full bg-custom-pattern bg-cover"></header>
-        <div className="mx-2 -mt-16">
+        <div className="mx-2 -mt-16 box-border">
           <img src="../../public/escudo_logo.png" alt="escudo de venezuela" className="h-36 w- rounded-full" />
         </div>
         <div className="w-[240px] h-[200px] -mt-20 text-[14px] ml-[150px]">
