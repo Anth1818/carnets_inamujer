@@ -17,7 +17,7 @@ export function CarnetInamujer() {
   return (
     <main className="flex flex-col flex-wrap justify-center items-center mt-6 ">
       <h2>Vista previa (Carnet del trabajador 27451286)</h2>
-      <section id="carnet-container" className=" w-[1400px] flex justify-evenly flex-wrap ">
+      <section id="carnet-container" className=" w-[1500px] flex justify-evenly flex-wrap ">
         <CarnetFront refFront={refCarnetFront} />
         <CarnetBack refBack={refCarnetBack} />
       </section>

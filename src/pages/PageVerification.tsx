@@ -9,8 +9,8 @@ export function PageVerification (){
     return (
         <>
             <Header />
-            <Verification />
-            <NotVerification />
+            {id && <Verification id={id}/>}  
+            <NotVerification id={id}/>
         </>
     )
 }
