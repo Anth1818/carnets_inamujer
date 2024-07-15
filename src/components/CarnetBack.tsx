@@ -28,7 +28,7 @@ export function CarnetBack({refBack}: ICarnetFrontProps) {
         </div>
         <div className='absolute mt-[170px]'>
         <QRCodeSVG
-          value={"http://www.inamujer.gob.ve"}
+          value={"http://localhost:5175/carnet/verification/27451286"}
           size={80}
           bgColor={"#ffffff"}
           fgColor={"#000000"}
