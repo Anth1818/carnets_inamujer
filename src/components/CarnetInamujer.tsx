@@ -58,9 +58,9 @@ export function CarnetInamujer({worker}: ICarnetInamujerProps) {
 
   return (
     <main className="flex flex-col items-center ">
-      <h2 className="mt-6">Vista previa (Carnet del trabajador {worker.id})</h2>
+      <h2 className="mt-6 font-bold">Vista previa (Carnet del trabajador {worker.id})</h2>
       <section id="carnet-container" className=" sm:w-[800px] md:w-[1500px] md:flex justify-center">
-        <CarnetFront refFront={refCarnetFront} worker_name={worker.name} worker_id={worker.id} worker_cargo={worker.cargo} worker_gender={worker.gender}/>
+        <CarnetFront refFront={refCarnetFront} worker_name={worker.name} worker_id={worker.id} worker_cargo={worker.cargo} worker_gender={worker.gender} worker_department={worker.department}/>
         <CarnetBack refBack={refCarnetBack} worker_id={worker.id}/>
       </section>
       <div className="flex gap-4">
