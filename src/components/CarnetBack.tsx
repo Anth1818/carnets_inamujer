@@ -17,7 +17,7 @@ export function CarnetBack({ refBack, worker_id }: ICarnetFrontProps) {
         id="carnet-back"
         className="min-h-[650px] min-w-[350px] md:w-[400px] relative border-2 box-border bg-white"
       >
-        <header className="h-[110px] w-full bg-custom-pattern bg-repeat-round"></header>
+        <header className="h-[110px] w-full bg-custom-pattern bg-cover bg-white"></header>
         <div className="mx-2 -mt-11 box-border">
           <img
             src="../../public/escudo_logo.png"
@@ -65,7 +65,7 @@ export function CarnetBack({ refBack, worker_id }: ICarnetFrontProps) {
           />
         </div>
 
-        <div className="h-[250px] w-full bg-custom-pattern2 bg-cover border-none"></div>
+        <div className="h-[250px] w-full bg-custom-pattern2 bg-repeat-round border-none bg-white"></div>
         <footer className=" bg-white">
           <div className=" h-[27px] bg-custom-pattern3 mt-1 bg-cover "></div>
         </footer>

@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'custom-pattern': "url('./public/fondo_superior.png')",
-        'custom-pattern2': "url('./public/fondo_inferior.png')",
+        'custom-pattern': "url('./public/fondo_superior_1.png')",
+        'custom-pattern2': "url('./public/fondo_inferior_1.png')",
         'custom-pattern3': "url('./public/cintillo_ministerio.png')",
       },
     },
