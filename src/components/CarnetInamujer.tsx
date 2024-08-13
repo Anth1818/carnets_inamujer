@@ -8,7 +8,8 @@ import { toPng } from 'html-to-image';
 interface ICarnetInamujerProps {
   worker: {
     id: number;
-    name: string;
+    names: string;
+    lastNames: string;
     cargo: string;
     department: string;
     status: string;
@@ -60,7 +61,7 @@ export function CarnetInamujer({worker}: ICarnetInamujerProps) {
     <main className="flex flex-col items-center ">
       <h2 className="mt-6 font-bold">Vista previa (Carnet del trabajador {worker.id})</h2>
       <section id="carnet-container" className=" sm:w-[800px] md:w-[1500px] md:flex justify-center">
-        <CarnetFront refFront={refCarnetFront} worker_name={worker.name} worker_id={worker.id} worker_cargo={worker.cargo} worker_gender={worker.gender} worker_department={worker.department}/>
+        <CarnetFront refFront={refCarnetFront} worker_lastNames={worker.lastNames} worker_names={worker.names} worker_id={worker.id} worker_cargo={worker.cargo} worker_gender={worker.gender} worker_department={worker.department}/>
         <CarnetBack refBack={refCarnetBack} worker_id={worker.id}/>
       </section>
       <div className="flex gap-4">

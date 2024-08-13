@@ -1,6 +1,7 @@
 interface ICarnetFrontProps {
     refFront: React.RefObject<HTMLDivElement>;
-    worker_name: string;
+    worker_names: string;
+    worker_lastNames: string;
     worker_id: number;
     worker_cargo: string;
     worker_gender: string;
@@ -8,7 +9,7 @@ interface ICarnetFrontProps {
 }
 
 
-export function CarnetFront({ refFront, worker_name, worker_cargo, worker_id, worker_gender, worker_department}: ICarnetFrontProps) {
+export function CarnetFront({ refFront, worker_names, worker_cargo, worker_id, worker_department, worker_lastNames}: ICarnetFrontProps) {
     // const avatar = worker_gender === "Masculunio" ? "../../public/avatar.png" : "../../public/avatar-female.png";
 
     const imgUrl =`../../src/assets/photos/${worker_id}.jpg` ;
@@ -22,13 +23,14 @@ export function CarnetFront({ refFront, worker_name, worker_cargo, worker_id, wo
                     <div className="mx-2 -mt-16 h-auto">
                         <img src="../../public/inamujer_logo.png" alt="logo inamujer" className="h-36 w-28 " />
                         <div className="flex flex-col justify-center items-start">
-                            <p className="text-base font-bold ">{worker_name}</p>
+                            <p className="text-base font-bold ">{worker_names}</p>
+                            <p className="text-base font-bold ">{worker_lastNames}</p>
                             <p className="text-md font-bold">{worker_id}</p>
                         </div>
                     </div>
 
                     <div className="flex flex-col justify-around items-center h-[420px] z-10 ml-16">
-                        <img src={imgUrl} alt="foto de trabajador" className="h-28 w-28 rounded-full" />
+                        <img src={imgUrl} alt="foto de trabajador" className="h-32 w-24 " />
                         <img src="../../public/bandera_logo.png" alt="" className="h-24 w-36 " />
                     </div>
                 </div>
