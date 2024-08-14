@@ -4,7 +4,6 @@ interface ICarnetFrontProps {
     worker_lastNames: string;
     worker_id: number;
     worker_cargo: string;
-    worker_gender: string;
     worker_department: string;
 }
 
@@ -15,7 +14,7 @@ export function CarnetFront({ refFront, worker_names, worker_cargo, worker_id, w
     const imgUrl =`../../src/assets/photos/${worker_id}.jpg` ;
     
     return (
-        <div id="frente" className="h-[720px] w-[550px] flex flex-col justify-start items-center mt-2  ">
+        <div id="frente" className="h-[750px] w-[550px] flex flex-col justify-start items-center mt-2  ">
             <h2 className="text-left font-bold ">Frente</h2>
             <div id="carnet-front" ref={refFront} className="min-h-[650px] min-w-[350px] relative md:w-[400px] border-2 box-border">
                 <header className="h-[110px] w-full bg-custom-pattern bg-cover bg-white"></header>
@@ -36,10 +35,10 @@ export function CarnetFront({ refFront, worker_names, worker_cargo, worker_id, w
                 </div>
                 <p className="text-center w-[300px] absolute -mt-[60px] text-lg ml-[40px] font-bold leading-tight">{worker_department}
                         </p>
-                <footer >
+                <footer>
                     <div className=" w-full h-[250px] bg-custom-pattern2 bg-repeat-round relative -z-10 border-none bg-white"></div>
-                    <div className="bg-purple-700 h-[40px] ">
-                        <p className="text-center text-white p-2 font-bold">{worker_cargo}</p>
+                    <div className="bg-purple-700 h-[50px] ">
+                        <p className="text-center text-white p-2 font-bold text-sm">{worker_cargo}</p>
                     </div>
                 </footer>
             </div>

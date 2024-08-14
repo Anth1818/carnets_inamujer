@@ -9,11 +9,11 @@ interface ICarnetInamujerProps {
   worker: {
     id: number;
     names: string;
-    lastNames: string;
-    cargo: string;
+    last_names: string
+    position: string;
     department: string;
     status: string;
-    gender: string;
+    identity_card: number;
   }
 
 }
@@ -32,7 +32,7 @@ export function CarnetInamujer({worker}: ICarnetInamujerProps) {
       toPng(refCarnetFront.current, { cacheBust: false })
         .then((dataUrl) => {
           const link = document.createElement("a");
-          link.download = `carnet-front-${worker.id}`;
+          link.download = `carnet-front-${worker.identity_card}`;
           link.href = dataUrl;
           link.click();
         })
@@ -47,7 +47,7 @@ export function CarnetInamujer({worker}: ICarnetInamujerProps) {
       toPng(refCarnetBack.current, { cacheBust: false })
         .then((dataUrl) => {
           const link = document.createElement("a");
-          link.download = `carnet-back-${worker.id}`;
+          link.download = `carnet-back-${worker.identity_card}`;
           link.href = dataUrl;
           link.click();
         })
@@ -59,10 +59,10 @@ export function CarnetInamujer({worker}: ICarnetInamujerProps) {
 
   return (
     <main className="flex flex-col items-center ">
-      <h2 className="mt-6 font-bold">Vista previa (Carnet del trabajador {worker.id})</h2>
+      <h2 className="mt-6 font-bold">Vista previa (Carnet del trabajador {worker.identity_card})</h2>
       <section id="carnet-container" className=" sm:w-[800px] md:w-[1500px] md:flex justify-center">
-        <CarnetFront refFront={refCarnetFront} worker_lastNames={worker.lastNames} worker_names={worker.names} worker_id={worker.id} worker_cargo={worker.cargo} worker_gender={worker.gender} worker_department={worker.department}/>
-        <CarnetBack refBack={refCarnetBack} worker_id={worker.id}/>
+        <CarnetFront refFront={refCarnetFront} worker_lastNames={worker.last_names} worker_names={worker.names} worker_id={worker.identity_card} worker_cargo={worker.position} worker_department={worker.department}/>
+        <CarnetBack refBack={refCarnetBack} worker_id={worker.identity_card}/>
       </section>
       <div className="flex gap-4">
         <button onClick={donwload} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >

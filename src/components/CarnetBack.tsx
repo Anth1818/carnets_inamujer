@@ -9,13 +9,13 @@ export function CarnetBack({ refBack, worker_id }: ICarnetFrontProps) {
   return (
     <div
       id="reverso"
-      className="h-[720px] w-[550px] flex flex-col justify-start items-center mt-2 "
+      className="h-[750px] w-[550px] flex flex-col justify-start items-center mt-2 "
     >
       <h2 className="text-left font-bold ">Reverso</h2>
       <div
         ref={refBack}
         id="carnet-back"
-        className="min-h-[650px] min-w-[350px] md:w-[400px] relative border-2 box-border bg-white"
+        className="min-h-[660px] min-w-[350px] md:w-[400px] relative border-2 box-border bg-white"
       >
         <header className="h-[110px] w-full bg-custom-pattern bg-cover bg-white"></header>
         <div className="mx-2 -mt-11 box-border">
@@ -54,9 +54,9 @@ export function CarnetBack({ refBack, worker_id }: ICarnetFrontProps) {
           </p>
         </div>
 
-        <div className="absolute mt-[170px]">
+        <div className="absolute mt-[150px]">
           <QRCodeSVG
-            value={`http://localhost:5175/carnet/verification/${worker_id}`}
+            value={`http://localhost:5175/${worker_id}`}
             size={80}
             bgColor={"#ffffff"}
             fgColor={"#000000"}
@@ -65,9 +65,9 @@ export function CarnetBack({ refBack, worker_id }: ICarnetFrontProps) {
           />
         </div>
 
-        <div className="h-[250px] w-full bg-custom-pattern2 bg-repeat-round border-none bg-white"></div>
+        <div className="h-[230px] w-full bg-custom-pattern2 bg-repeat-round border-none bg-white"></div>
         <footer className=" bg-white">
-          <div className=" h-[27px] bg-custom-pattern3 mt-1 bg-cover "></div>
+          <div className=" h-[50px] w-full bg-custom-pattern3 mt-1 bg-repeat-round "></div>
         </footer>
       </div>
     </div>
