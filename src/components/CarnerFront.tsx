@@ -12,7 +12,7 @@ export function CarnetFront({ refFront, worker_fullName, worker_cargo, worker_id
     // const avatar = worker_gender === "Masculunio" ? "../../public/avatar.png" : "../../public/avatar-female.png";
 
     // const imgUrl =`../../src/assets/photos/${worker_id}.jpg` ;
-    const imgUrl = imagePreviews[worker_id] || "../../public/avatar.png";
+    const imgUrl = imagePreviews[worker_id];
     
     return (
         <div id="frente" className="h-[750px] w-[550px] flex flex-col justify-start items-center mt-2  ">
@@ -23,8 +23,8 @@ export function CarnetFront({ refFront, worker_fullName, worker_cargo, worker_id
                     <div className="mx-2 -mt-16 h-auto">
                         <img src="../../public/inamujer_logo.png" alt="logo inamujer" className="h-36 w-28 " />
                         <div className="flex flex-col justify-center items-start">
-                            <p className="text-base font-bold w-[150px]">{worker_fullName}</p>
-                            <p className="text-md font-bold">{worker_id}</p>
+                            <p className="text-base font-bold w-[160px]">{worker_fullName}</p>
+                            <p className="text-md font-bold">CI: {worker_id}</p>
                         </div>
                     </div>
 
