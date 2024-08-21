@@ -8,17 +8,17 @@ import { toPng } from 'html-to-image';
 interface ICarnetInamujerProps {
   worker: {
     id: number;
-    names: string;
-    last_names: string
+    full_name: string;
     position: string;
     department: string;
     status: string;
     identity_card: number;
   }
+  imagePreviews: { [key: string]: string };
 
 }
 
-export function CarnetInamujer({worker}: ICarnetInamujerProps) {
+export function CarnetInamujer({worker, imagePreviews}: ICarnetInamujerProps) {
   const refCarnetFront = useRef<HTMLDivElement>(null);
   const refCarnetBack = useRef<HTMLDivElement>(null);
 
@@ -61,7 +61,7 @@ export function CarnetInamujer({worker}: ICarnetInamujerProps) {
     <main className="flex flex-col items-center ">
       <h2 className="mt-6 font-bold">Vista previa (Carnet del trabajador {worker.identity_card})</h2>
       <section id="carnet-container" className=" sm:w-[800px] md:w-[1500px] md:flex justify-center">
-        <CarnetFront refFront={refCarnetFront} worker_lastNames={worker.last_names} worker_names={worker.names} worker_id={worker.identity_card} worker_cargo={worker.position} worker_department={worker.department}/>
+        <CarnetFront refFront={refCarnetFront} worker_fullName={worker.full_name} worker_id={worker.identity_card} worker_cargo={worker.position} worker_department={worker.department} imagePreviews={imagePreviews}/>
         <CarnetBack refBack={refCarnetBack} worker_id={worker.identity_card}/>
       </section>
       <div className="flex gap-4">

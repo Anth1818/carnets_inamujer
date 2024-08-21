@@ -54,7 +54,7 @@ export function CarnetBack({ refBack, worker_id }: ICarnetFrontProps) {
           </p>
         </div>
 
-        <div className="absolute mt-[150px]">
+        <div className="absolute mt-[190px]">
           <QRCodeSVG
             value={`http://localhost:5175/${worker_id}`}
             size={80}
@@ -65,9 +65,9 @@ export function CarnetBack({ refBack, worker_id }: ICarnetFrontProps) {
           />
         </div>
 
-        <div className="h-[230px] w-full bg-custom-pattern2 bg-repeat-round border-none bg-white"></div>
+        <div className="h-[270px] w-full bg-custom-pattern2 bg-repeat-round border-none bg-white"></div>
         <footer className=" bg-white">
-          <div className=" h-[50px] w-full bg-custom-pattern3 mt-1 bg-repeat-round "></div>
+          <img src="../../public/cintillo_ministerio.png" className=""></img>
         </footer>
       </div>
     </div>

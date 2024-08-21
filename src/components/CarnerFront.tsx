@@ -1,17 +1,18 @@
 interface ICarnetFrontProps {
     refFront: React.RefObject<HTMLDivElement>;
-    worker_names: string;
-    worker_lastNames: string;
+    worker_fullName: string;
     worker_id: number;
     worker_cargo: string;
     worker_department: string;
+    imagePreviews: { [key: string]: string };
 }
 
 
-export function CarnetFront({ refFront, worker_names, worker_cargo, worker_id, worker_department, worker_lastNames}: ICarnetFrontProps) {
+export function CarnetFront({ refFront, worker_fullName, worker_cargo, worker_id, worker_department, imagePreviews}: ICarnetFrontProps) {
     // const avatar = worker_gender === "Masculunio" ? "../../public/avatar.png" : "../../public/avatar-female.png";
 
-    const imgUrl =`../../src/assets/photos/${worker_id}.jpg` ;
+    // const imgUrl =`../../src/assets/photos/${worker_id}.jpg` ;
+    const imgUrl = imagePreviews[worker_id] || "../../public/avatar.png";
     
     return (
         <div id="frente" className="h-[750px] w-[550px] flex flex-col justify-start items-center mt-2  ">
@@ -22,18 +23,17 @@ export function CarnetFront({ refFront, worker_names, worker_cargo, worker_id, w
                     <div className="mx-2 -mt-16 h-auto">
                         <img src="../../public/inamujer_logo.png" alt="logo inamujer" className="h-36 w-28 " />
                         <div className="flex flex-col justify-center items-start">
-                            <p className="text-base font-bold ">{worker_names}</p>
-                            <p className="text-base font-bold ">{worker_lastNames}</p>
+                            <p className="text-base font-bold w-[150px]">{worker_fullName}</p>
                             <p className="text-md font-bold">{worker_id}</p>
                         </div>
                     </div>
 
-                    <div className="flex flex-col justify-around items-center h-[420px] z-10 ml-16">
+                    <div className="flex flex-col justify-around items-center h-[420px] z-10 ml-16 mt-2">
                         <img src={imgUrl} alt="foto de trabajador" className="h-32 w-24 " />
                         <img src="../../public/bandera_logo.png" alt="" className="h-24 w-36 " />
                     </div>
                 </div>
-                <p className="text-center w-[300px] absolute -mt-[60px] text-lg ml-[40px] font-bold leading-tight">{worker_department}
+                <p className="text-center w-[300px] absolute -mt-[50px] text-lg ml-[40px] font-bold leading-tight">{worker_department}
                         </p>
                 <footer>
                     <div className=" w-full h-[250px] bg-custom-pattern2 bg-repeat-round relative -z-10 border-none bg-white"></div>
