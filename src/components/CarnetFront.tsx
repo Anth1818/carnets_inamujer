@@ -1,6 +1,8 @@
 interface ICarnetFrontProps {
     refFront: React.RefObject<HTMLDivElement>;
-    worker_fullName: string;
+    // worker_fullName: string;
+    worker_names: string;
+    worker_lastNames: string;
     worker_id: number;
     worker_cargo: string;
     worker_department: string;
@@ -8,10 +10,8 @@ interface ICarnetFrontProps {
 }
 
 
-export function CarnetFront({ refFront, worker_fullName, worker_cargo, worker_id, worker_department, imagePreviews}: ICarnetFrontProps) {
-    // const avatar = worker_gender === "Masculunio" ? "../../public/avatar.png" : "../../public/avatar-female.png";
+export function CarnetFront({ refFront, worker_names, worker_lastNames, worker_cargo, worker_id, worker_department, imagePreviews}: ICarnetFrontProps) {
 
-    // const imgUrl =`../../src/assets/photos/${worker_id}.jpg` ;
     const imgUrl = imagePreviews[worker_id];
     
     return (
@@ -23,7 +23,9 @@ export function CarnetFront({ refFront, worker_fullName, worker_cargo, worker_id
                     <div className="mx-2 -mt-16 h-auto">
                         <img src="../../public/inamujer_logo.png" alt="logo inamujer" className="h-36 w-28 " />
                         <div className="flex flex-col justify-center items-start">
-                            <p className="text-base font-bold w-[160px]">{worker_fullName}</p>
+                            {/* <p className="text-base font-bold w-[160px]">{worker_fullName}</p> */}
+                            <p className="text-base font-bold w-[160px]">{worker_names}</p>
+                            <p className="text-base font-bold w-[160px]">{worker_lastNames}</p>
                             <p className="text-md font-bold">CI: {worker_id}</p>
                         </div>
                     </div>

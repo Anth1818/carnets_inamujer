@@ -1,4 +1,4 @@
-import { CarnetFront } from "./CarnerFront";
+import { CarnetFront } from "./CarnetFront";
 import { CarnetBack } from "./CarnetBack";
 import { useRef } from "react";
 // import { exportComponentAsPNG } from 'react-component-export-image';
@@ -8,7 +8,9 @@ import { toPng } from 'html-to-image';
 interface ICarnetInamujerProps {
   worker: {
     id: number;
-    full_name: string;
+    // full_name: string;
+    names: string;
+    last_names: string;
     position: string;
     department: string;
     status: string;
@@ -32,7 +34,7 @@ export function CarnetInamujer({worker, imagePreviews}: ICarnetInamujerProps) {
       toPng(refCarnetFront.current, { cacheBust: false })
         .then((dataUrl) => {
           const link = document.createElement("a");
-          link.download = `carnet-front-${worker.identity_card}`;
+          link.download = `carnet-frontal-${worker.identity_card}`;
           link.href = dataUrl;
           link.click();
         })
@@ -47,7 +49,7 @@ export function CarnetInamujer({worker, imagePreviews}: ICarnetInamujerProps) {
       toPng(refCarnetBack.current, { cacheBust: false })
         .then((dataUrl) => {
           const link = document.createElement("a");
-          link.download = `carnet-back-${worker.identity_card}`;
+          link.download = `carnet-reverso-${worker.identity_card}`;
           link.href = dataUrl;
           link.click();
         })
@@ -61,12 +63,12 @@ export function CarnetInamujer({worker, imagePreviews}: ICarnetInamujerProps) {
     <main className="flex flex-col items-center ">
       <h2 className="mt-6 font-bold">Vista previa (Carnet del trabajador {worker.identity_card})</h2>
       <section id="carnet-container" className=" sm:w-[800px] md:w-[1500px] md:flex justify-center">
-        <CarnetFront refFront={refCarnetFront} worker_fullName={worker.full_name} worker_id={worker.identity_card} worker_cargo={worker.position} worker_department={worker.department} imagePreviews={imagePreviews}/>
+        <CarnetFront refFront={refCarnetFront} worker_names={worker.names} worker_lastNames={worker.last_names} worker_id={worker.identity_card} worker_cargo={worker.position} worker_department={worker.department} imagePreviews={imagePreviews}/>
         <CarnetBack refBack={refCarnetBack} worker_id={worker.identity_card}/>
       </section>
       <div className="flex gap-4">
         <button onClick={donwload} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
-          descargar ambos en png
+          Descargar en png
           </button>
       {/* <button onClick={handleDownloadFront} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
         Descargar frente en png

@@ -20,7 +20,7 @@ function useImageUploader() {
     setPhotoIds(Object.keys(previews));
 
     // Opcional: Guardar los IDs en localStorage
-    // localStorage.setItem("photoIds", JSON.stringify(Object.keys(previews)));
+    localStorage.setItem("photoIds", JSON.stringify(Object.keys(previews)));
   };
 
   // Limpiar URLs temporales al desmontar o actualizar las imágenes

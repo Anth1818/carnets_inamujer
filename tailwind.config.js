@@ -11,6 +11,9 @@ export default {
         'custom-pattern2': "url('./public/fondo_inferior_1.png')",
         'custom-pattern3': "url('./public/cintillo_ministerio.png')",
       },
+      fontFamily:{
+        'roboto': ['Roboto', 'sans-serif']
+      }
     },
   },
   plugins: [],
