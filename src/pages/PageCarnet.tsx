@@ -4,7 +4,7 @@ import { Header } from "../components/Header";
 // import deparments from "../utils/deparments.ts";
 import useImageUploader from "../hooks/useImageUploader";
 
-const API = `http://localhost:3000/license`;
+const API = `http://172.30.60.24:3000/license` || `http://localhost:3000/license`;
 
 type dataWorkers = {
   id: number;
@@ -93,6 +93,8 @@ export function PageCarnet() {
 
   const departmentsFinded = Array.from(new Set(comparedData.map((worker) => worker.department)));
 
+  const notAllowed = comparedData.length === 0 ? 'cursor-not-allowed' : '';
+
   return (
     <>
       <Header />
@@ -128,7 +130,7 @@ export function PageCarnet() {
       </div>
       <div className="flex flex-col md:flex-row justify-center items-center mb-6">
         <select
-          className="p-2 mx-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-3/4 md:w-1/4 "
+          className={`p-2 mx-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-3/4 md:w-1/4 ${notAllowed}`}
           value={department}
           onChange={handleDepartment}
           disabled={comparedData.length === 0}
@@ -145,13 +147,13 @@ export function PageCarnet() {
           type="text"
           placeholder="Buscar trabajador"
           disabled={comparedData.length === 0}
-          className="p-2 mx-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-3/4 md:w-1/4"
+          className={`p-2 mx-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-3/4 md:w-1/4 ${notAllowed}`}
           value={search}
           onChange={(e) => handleChanges(e)}
           onKeyDown={(e) => e.key === "Enter" && clearDepartment()}
         />
         <button
-          className="p-2 mx-2 my-2 bg-blue-500 text-white rounded-lg  w-24 pointer-events-auto"
+          className={`p-2 mx-2 my-2 bg-blue-500 text-white rounded-lg w-24 pointer-events-auto ${notAllowed}`}
           onClick={clearDepartment}
           disabled={comparedData.length === 0}
         >
